@@ -18,15 +18,18 @@ public class Board{
     
     //setup method
     public void placeShip(){
-        int s1C = (int) (Math.random()*10);
-        int s1R = (int) (Math.random()*11);
-        gameBoard [s1R][s1C] = 1;
-        gameBoard [s1R][s1C +1] = 1;
+        int sOneC = (int) (Math.random()*10);
+        int sOneR = (int) (Math.random()*11);
+        gameBoard [sOneR][sOneC] = 1;
+        gameBoard [sOneR][sOneC +1] = 1;
 
-        int s1C = (int) (Math.random()*10);
-        int s1R = (int) (Math.random()*11);
-        gameBoard [s1R][s1C] = 1;
-        gameBoard [s1R][s1C +1] = 1;
+        do{
+        int sTwoC = (int) (Math.random()*9);
+        }
+        while (sTwoC != sOneC && sTwoC != (sTwoC + 1))
+        int sTwoR = (int) (Math.random()*11);
+        gameBoard [sOneR][sOneC] = 1;
+        gameBoard [sOneR][sOneC +1] = 1;
 
 
 
