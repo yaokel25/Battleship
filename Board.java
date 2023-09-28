@@ -27,8 +27,8 @@ public class Board{
         int sTwoC = (int) (Math.random()*9);
         }
         while (sTwoC != sOneC && sTwoC != (sTwoC + 1))
-        int sTwoR = (int) (Math.random()*11);
-        gameBoard [sOneR][sOneC] = 1;
+        
+        gameBoard [sTwoR][sTwoC] = 1;
         gameBoard [sOneR][sOneC +1] = 1;
 
 
