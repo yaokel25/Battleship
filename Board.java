@@ -23,11 +23,14 @@ public class Board{
         
         char [] orientation = new char[5];//keep track of vertically placed or horizontally placed (5 ships to keep track of)
         for (int i = 0; i < 5; i++){
-        System.out.print("Whould you like to place ship horizontally or vertically (V or H)?");
-        orientation[i] = scan.nextLine().charAt(0);
-        System.out.println("What is the starting location of length " + ships[i]);
-        String shipLocation = scan.nextLine().toUpperCase();
-        int startingLocationR = (int) shipLocation.charAt(0) - 65; 
+        do{
+            System.out.print("Whould you like to place ship horizontally or vertically (H or V)?");
+            orientation[i] = scan.nextLine().charAt(0);
+        }
+        while(orientation[i] != 'V' || orientation[i] != 'H');
+        System.out.println("What is the starting location of ship of length " + ships[i] + " (ie 22 or 46)");
+        String shipLocation = scan.nextLine();
+        int startingLocationR = (int) shipLocation.charAt(0) - 48; 
         int startingLocationC = (int) shipLocation.charAt(1) - 48;
         for(int j = 0; j < ships[i]; j++){
             if((int) orientation[i] == 86){
