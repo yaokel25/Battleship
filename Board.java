@@ -1,10 +1,10 @@
 import java.util.Scanner;
 public class Board{
-
+        Scanner scan = new Scanner(System.in);
         int numRows = 10;
         int numCols = 10;
         int[] ships = {2,3,3,4,5};
-        Scanner scan = new Scanner(System.in); 
+        
 
         int[][] gameBoard = new int[numRows][numCols];
         
