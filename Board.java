@@ -18,7 +18,7 @@ public class Board{
         }
     }
     
-    //setup method
+    //setup method-user places 5 battleships
     public void placeShip(){
         
         char [] orientation = new char[5];//keep track of vertically placed or horizontally placed (5 ships to keep track of)
@@ -31,10 +31,10 @@ public class Board{
         int startingLocationC = (int) shipLocation.charAt(1) - 48;
         for(int j = 0; j < ships[i]; j++){
             if((int) orientation[i] == 86){
-            gameBoard[startingLocationR + j][startingLocationC] = 1;
+            gameBoard[startingLocationR + j][startingLocationC] = '1';
         }
         else{
-            gameBoard[startingLocationR][startingLocationC +j] = 1;
+            gameBoard[startingLocationR][startingLocationC +j] = '1';
         }
     }
         
