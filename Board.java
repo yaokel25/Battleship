@@ -20,19 +20,8 @@ public class Board{
     
     //setup method
     public void placeShip(){
-        /*int sOneC = (int) (Math.random()*10);
-        int sOneR = (int) (Math.random()*11);
-        gameBoard [sOneR][sOneC] = 1;
-        gameBoard [sOneR][sOneC +1] = 1;
-
-        do{
-        int sTwoC = (int) (Math.random()*9);
-        }
-        while (sTwoC != sOneC && sTwoC != (sTwoC + 1))
         
-        gameBoard [sTwoR][sTwoC] = 1;
-        gameBoard [sOneR][sOneC +1] = 1;*/
-        char [] orientation = new char[5];
+        char [] orientation = new char[5];//keep track of vertically placed or horizontally placed (5 ships to keep track of)
         for (int i = 0; i < 5; i++){
         System.out.print("Whould you like to place ship horizontally or vertically (V or H)?");
         orientation[i] = scan.nextLine().charAt(0);
@@ -41,7 +30,7 @@ public class Board{
         int startingLocationR = (int) shipLocation.charAt(0) - 65; 
         int startingLocationC = (int) shipLocation.charAt(1) - 48;
         for(int j = 0; j < ships[i]; j++){
-            if(orientation[i] == "V"){
+            if((int) orientation[i] == 86){
             gameBoard[startingLocationR + j][startingLocationC] = 1;
         }
         else{
