@@ -3,7 +3,7 @@ public class Board{
 
         int numRows = 10;
         int numCols = 10;
-        int[] ships = new int[5]; // {2,3,3,4,5}
+        int[] ships = {2,3,3,4,5};
         Scanner scan = new Scanner(System.in); 
 
         int[][] gameBoard = new int[numRows][numCols];
@@ -32,20 +32,30 @@ public class Board{
         
         gameBoard [sTwoR][sTwoC] = 1;
         gameBoard [sOneR][sOneC +1] = 1;*/
-        System.out.println("Enter the location for your first ship (2 blocks): ");
-        String ship1 = scan.nextLine();
-        System.out.println("Enter the location for your second ship (3 blocks): ");
-        String ship2 = scan.nextLine();
-        System.out.println("Enter the location for your third ship (3 blocks): ");
-        String ship3 = scan.nextLine();
-        System.out.println("Enter the location for your fourth ship (4 blocks): ");
-        String ship4 = scan.nextLine();
-        System.out.println("Enter the location for your fifth ship (5 blocks): ");
-        String ship5 = scan.nextLine();
+        char [] orientation = new char[5];
+        for (int i = 0; i < 5; i++){
+        System.out.print("Whould you like to place ship horizontally or vertically (V or H)?");
+        orientation[i] = scan.nextLine().charAt(0);
+        System.out.println("What is the starting location of length " + ships[i]);
+        String shipLocation = scan.nextLine().toUpperCase();
+        int startingLocationR = (int) shipLocation.charAt(0) - 65; 
+        int startingLocationC = (int) shipLocation.charAt(1) - 48;
+        for(int j = 0; j < ships[i]; j++){
+            if(orientation[i] == "V"){
+            gameBoard[startingLocationR + j][startingLocationC] = 1;
+        }
+        else{
+            gameBoard[startingLocationR][startingLocationC +j] = 1;
+        }
+    }
+        
+
+    }
+        
         
 
 
 
         }
+    }
     //play method
-}
