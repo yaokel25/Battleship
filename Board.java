@@ -22,6 +22,8 @@ public class Board{
     public void placeShip(){
         
         char [] orientation = new char[5];//keep track of vertically placed or horizontally placed (5 ships to keep track of)
+        int startingLocationR;
+        int startingLocationC;
         for (int i = 0; i < 5; i++){
         do{
             System.out.print("Whould you like to place ship horizontally or vertically (H or V)?");
@@ -31,19 +33,20 @@ public class Board{
         do{
         System.out.println("What is the starting location of ship of length " + ships[i] + " (ie 22 or 46)");
         String shipLocation = scan.nextLine();
-        int startingLocationR = (int) shipLocation.charAt(0) - 65; 
-        int startingLocationC = (int) shipLocation.charAt(1) - 48;
+        startingLocationR = (int) shipLocation.charAt(0) - 65; 
+        startingLocationC = (int) shipLocation.charAt(1) - 48;
+        //check if ships overlap
         boolean overlap;
         if( orientation[i] == 'H'){
             for (int h = 0; h < ships[i]; h++){
                 if(gameBoard[startingLocationR + h][startingLocationC] == '1'){
                     overlap = true;
-                }
+                }//if
                 else{
                     overlap = false;
-                }
-            }
-        }
+                }//else
+            }//for loop
+        }//if loop
         else if(orientation[i] == 'V'){
             for(int g = 0; g < ships[i]; g++){
                 if(gameBoard[startingLocationR][startingLocationC + g] == '1'){
@@ -51,12 +54,12 @@ public class Board{
                 }
                 else{
                     overlap = false;
-                }
-            }
-        }
-    }
+                }//else
+            }//for loop
+        }//else if
+    }//do loop
         
-        while ( (orientation[i] == 'H' && (startingLocationR + ships[i])> 10) || (orientation[i] == 'V' && (startingLocationC + ships[i] > 10)) || overlap == false)
+        while ( (orientation[i] == 'H' && (startingLocationR + ships[i])> 10) || (orientation[i] == 'V' && (startingLocationC + ships[i] > 10)) || overlap == false);
     
         for(int j = 0; j < ships[i]; j++){
             if((int) orientation[i] == 86){
