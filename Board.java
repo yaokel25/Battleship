@@ -22,15 +22,15 @@ public class Board{
     public void placeShip(){
         
         char [] orientation = new char[5];//keep track of vertically placed or horizontally placed (5 ships to keep track of)
-        int startingLocationR;
-        int startingLocationC;
-        for (int i = 0; i < 5; i++){
-        do{
+        int startingLocationR;//starting row number
+        int startingLocationC;//starting column number
+        for (int i = 0; i < 5; i++){//repeat 5 times for 5 ships
+        do{//ask if ship is placed horizontally or vertically
             System.out.print("Whould you like to place ship horizontally or vertically (H or V)?");
-            orientation[i] = scan.nextLine().toUpperCase().charAt(0);
+            orientation[i] = scan.nextLine().charAt(0);
         }
         while(orientation[i] != 'V' || orientation[i] != 'H');
-        do{
+        do{//ask for starting coordinates of ships
         System.out.println("What is the starting location of ship of length " + ships[i] + " (ie A2 or B6)");
         String shipLocation = scan.nextLine();
         startingLocationR = (int) shipLocation.charAt(0) - 65; 
@@ -61,8 +61,8 @@ public class Board{
         
         while ( (orientation[i] == 'H' && (startingLocationR + ships[i])> 10) || (orientation[i] == 'V' && (startingLocationC + ships[i] > 10)) || overlap == false);
     
-        for(int j = 0; j < ships[i]; j++){
-            if((int) orientation[i] == 86){
+        for(int j = 0; j < ships[i]; j++){//places ships
+            if(orientation[i] == 'V'){
             gameBoard[startingLocationR + j][startingLocationC] = '1';
         }
         else{
@@ -79,4 +79,5 @@ public class Board{
 
         }//method placeShip
     }//class Board
+    
     //play method

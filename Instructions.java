@@ -16,7 +16,7 @@ public class Instructions{
     else{
         System.out.println("Normal game instructions")
     }
-    }
+    }//method printInstructionsSpecific
     public Instructions(boolean gameType){
         gameType1 = gameType;
     }
