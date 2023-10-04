@@ -25,13 +25,17 @@ public class Board{
         for (int i = 0; i < 5; i++){
         do{
             System.out.print("Whould you like to place ship horizontally or vertically (H or V)?");
-            orientation[i] = scan.nextLine().charAt(0);
+            orientation[i] = scan.nextLine().toUpperCase().charAt(0);
         }
         while(orientation[i] != 'V' || orientation[i] != 'H');
+        do{
         System.out.println("What is the starting location of ship of length " + ships[i] + " (ie 22 or 46)");
         String shipLocation = scan.nextLine();
-        int startingLocationR = (int) shipLocation.charAt(0) - 48; 
+        int startingLocationR = (int) shipLocation.charAt(0) - 65; 
         int startingLocationC = (int) shipLocation.charAt(1) - 48;
+        }
+        while ( (orientation[i] == 'H' && ((startingLocationR + ships[i])> 10 || )))
+    
         for(int j = 0; j < ships[i]; j++){
             if((int) orientation[i] == 86){
             gameBoard[startingLocationR + j][startingLocationC] = '1';
