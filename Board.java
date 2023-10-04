@@ -59,7 +59,7 @@ public class Board{
         }//else if
     }//do loop
         
-        while ( (orientation[i] == 'H' && (startingLocationR + ships[i])> 10) || (orientation[i] == 'V' && (startingLocationC + ships[i] > 10)) || overlap == false);
+        while ( (orientation[i] == 'H' && (startingLocationR + ships[i])> 10) || (orientation[i] == 'V' && (startingLocationC + ships[i] > 10)) || overlap == false);//check if it is >= 10 or > 10
     
         for(int j = 0; j < ships[i]; j++){//places ships
             if(orientation[i] == 'V'){
