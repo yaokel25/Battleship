@@ -67,16 +67,16 @@ public class Board{
         }
         else{
             gameBoard[startingLocationR][startingLocationC +j] = '1';
-        }
-    }
+        }//else
+    }//for loop
         
 
-    }
+    }//for loop line 27
         
         
 
 
 
-        }
-    }
+        }//method placeShip
+    }//class Board
     //play method
