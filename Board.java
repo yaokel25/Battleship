@@ -31,7 +31,7 @@ public class Board{
         }
         while(orientation[i] != 'V' || orientation[i] != 'H');
         do{
-        System.out.println("What is the starting location of ship of length " + ships[i] + " (ie 22 or 46)");
+        System.out.println("What is the starting location of ship of length " + ships[i] + " (ie A2 or B6)");
         String shipLocation = scan.nextLine();
         startingLocationR = (int) shipLocation.charAt(0) - 65; 
         startingLocationC = (int) shipLocation.charAt(1) - 48;
