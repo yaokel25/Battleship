@@ -33,8 +33,30 @@ public class Board{
         String shipLocation = scan.nextLine();
         int startingLocationR = (int) shipLocation.charAt(0) - 65; 
         int startingLocationC = (int) shipLocation.charAt(1) - 48;
+        boolean overlap;
+        if( orientation[i] == 'H'){
+            for (int h = 0; h < ships[i]; h++){
+                if(gameBoard[startingLocationR + h][startingLocationC] == '1'){
+                    overlap = true;
+                }
+                else{
+                    overlap = false;
+                }
+            }
         }
-        while ( (orientation[i] == 'H' && ((startingLocationR + ships[i])> 10 || )))
+        else if(orientation[i] == 'V'){
+            for(int g = 0; g < ships[i]; g++){
+                if(gameBoard[startingLocationR][startingLocationC + g] == '1'){
+                    overlap = true;
+                }
+                else{
+                    overlap = false;
+                }
+            }
+        }
+    }
+        
+        while ( (orientation[i] == 'H' && (startingLocationR + ships[i])> 10) || (orientation[i] == 'V' && (startingLocationC + ships[i] > 10)) || overlap == false)
     
         for(int j = 0; j < ships[i]; j++){
             if((int) orientation[i] == 86){
