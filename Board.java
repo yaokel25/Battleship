@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 import java.util.Scanner;
 public class Board{
         Scanner scan = new Scanner(System.in);
