@@ -3,15 +3,7 @@ public class Tester{
     public static final Scanner scan = new Scanner(System.in);
     public static void main(String[] args){
     char fastSlow1;
-    int numRows = 10;
-    int numCols = 10;
-    int[] ships = {2,3,3,4,5};
-    int[][] gameBoard = new int[numRows][numCols];
-    for (int b = 0; b < numRows; b++){
-        for (int a = 0; a < numCols; a++){
-            gameBoard[b][a] = 5;
-        }
-    }
+    
     boolean fastSlow = false;//will be used to check if user plays fast or slow game
     Instructions instruc1 = new Instructions (fastSlow);//new instructions object
     instruc1.printInstructionsGeneral();//print general instructions
@@ -31,9 +23,9 @@ public class Tester{
     instruc1.printInstructionsSpecific(fastSlow);//print game specific instructions
     
     
-    Board b1 = new Board(fastSlow, gameBoard, numRows, numCols, ships);
+    Board b1 = new Board(fastSlow);
    
-    b1.placeShip(fastSlow, gameBoard, numRows, numCols, ships);
+    b1.placeShip(fastSlow);
     
     
 

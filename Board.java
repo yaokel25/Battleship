@@ -2,32 +2,36 @@
 import java.util.Scanner;
 public class Board{
         Scanner scan = new Scanner(System.in);
+        private int numRows = 10;
+        private int numCols = 10;
+        private int[] ships = {2,3,3,4,5};
+        private int[][] gameBoard = new int[numRows][numCols];
+        private boolean fastSlow;
         
+        for (int b = 0; b < numRows; b++){
+            for (int a = 0; a < numCols; a++){
+                gameBoard[b][a] = 5;
+            }
+        }
+        private int[][] guessBoard = new int[numRows][numCols];
         
         //print all elements of 2d array
         
-        public void printBoard(int[][] gameBoard, int numRows, int numCols){
+        public void printBoard(){
             for(int j = 0; j < numCols; j++){
-            for (int i = 0; i < numRows; i++){
-            System.out.print(gameBoard[j][i]);
+                for (int i = 0; i < numRows; i++){
+                System.out.print(gameBoard[j][i]);
             }
             System.out.print("\n");
         }
     }
-    public Board(boolean fastSlow, int[][] gameBoard, int numRows, int numCols, int[] ships){
-        for (int i = 0; i < numRows; i++){
-            for(int j = 0; j < numCols; j++){
-                gameBoard[i][j] = gameBoard [i][j];
-            }
-        }
+    public Board(boolean fastSlow){
         fastSlow = fastSlow;
-        
-
-
     }
     
+    
     //setup method-user places 5 battleships
-    public void placeShip(boolean fastSlow, int[][] gameBoard, int numRows, int numCols, int[] ships){
+    public void placeShip(boolean fastSlow){
         if (fastSlow == false){//if user chooses slow game
         boolean overlap = false;//will be used to check if ships overlap or go off board
         char [] orientation = new char[5];//keep track of vertically placed or horizontally placed (5 ships to keep track of)
@@ -86,12 +90,13 @@ public class Board{
     }//for loop
         
 
-    }
-}
+    }//first for loop
+}//if for slow game
+
         
         
     }//method placeShip
-}
+}//board class
         
         
 
