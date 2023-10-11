@@ -3,7 +3,7 @@ public class GamePlay{
     Scanner scan = new Scanner(System.in);
     private int guessLocationR;
     private int guessLocationC;
-    public void makeGuess(){
+    public void makeGuess(int[][] guessBoard){
         do{
         System.out.println("Enter your guess (ex. A2): ")
         String guessLocationString = scan.nextLine();
@@ -15,13 +15,13 @@ public class GamePlay{
 
     }
     
-    public void guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC){
+    public void guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, String guessLocationString, int[][] guessBoard){
         if(guessBoard[guessLocationR][guessLocationC] == gameBoard[guessLocationR][guessLocationC])
             System.out.println("You hit a ship at " + guessLocationString + " !");
             guessBoard[guessLocationR][guessLocationC] = 3;
         }
         else if(guessBoard[guessLocationR][guessLocationC] != gameBoard[guessLocationR][guessLocationC]){
-            
+            System.out.println("There is no ship at " + guessLocationString + " !"); 
         }
     }
 
