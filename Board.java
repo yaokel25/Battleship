@@ -16,7 +16,7 @@ public class Board{
             }
             for(int h = 0; h < numRows; h++){
                 for(int u = 0; u < numRows; u++){
-                    guessBoard[h][u] = 4;
+                    guessBoard[h][u] = 5;
                 }
             }
         }
