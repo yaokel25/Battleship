@@ -8,15 +8,16 @@ public class Board{
         public int[][] gameBoard = new int[numRows][numCols];
         public int[][] guessBoard = new int[numRows][numCols];
         public boolean fastSlow;
-
-        for (int b = 0; b < numRows; b++){//5 is untaken space on game board, 1 is taken space on gameboard and guessed space on guessboard, 4 is unguessed space on guessboard, 3 is hit spot on guessboard
-            for (int a = 0; a < numCols; a++){
-                gameBoard[b][a] = 5;
+        public void makeBoard(){
+            for (int b = 0; b < numRows; b++){//5 is untaken space on game board, 1 is taken space on gameboard and guessed space on guessboard, 4 is unguessed space on guessboard, 3 is hit spot on guessboard
+                for (int a = 0; a < numCols; a++){
+                  gameBoard[b][a] = 5;
+             }
             }
-        }
-        for(int h = 0; h < numRows; h++){
-            for(int u = 0; u < numRows; u++){
-                guessBoard[h][u] = 4;
+            for(int h = 0; h < numRows; h++){
+                for(int u = 0; u < numRows; u++){
+                    guessBoard[h][u] = 4;
+                }
             }
         }
        
