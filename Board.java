@@ -2,12 +2,12 @@
 import java.util.Scanner;
 public class Board{
         Scanner scan = new Scanner(System.in);
-        private int numRows = 10;
-        private int numCols = 10;
-        private int[] ships = {2,3,3,4,5};
-        private int[][] gameBoard = new int[numRows][numCols];
-        private int[][] guessBoard = new int[numRows][numCols];
-        private boolean fastSlow;
+        public int numRows = 10;
+        public int numCols = 10;
+        public int[] ships = {2,3,3,4,5};
+        public int[][] gameBoard = new int[numRows][numCols];
+        public int[][] guessBoard = new int[numRows][numCols];
+        public boolean fastSlow;
 
         for (int b = 0; b < numRows; b++){//5 is untaken space on game board, 1 is taken space on gameboard and guessed space on guessboard, 4 is unguessed space on guessboard, 3 is hit spot on guessboard
             for (int a = 0; a < numCols; a++){
