@@ -17,7 +17,7 @@ public class GamePlay{
     }
     
     public void guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, int[][] guessBoard){
-        if(guessBoard[guessLocationR][guessLocationC] == gameBoard[guessLocationR][guessLocationC])
+        if(guessBoard[guessLocationR][guessLocationC] == gameBoard[guessLocationR][guessLocationC]){
             guessBoard[guessLocationR][guessLocationC] = 3;
         }
         

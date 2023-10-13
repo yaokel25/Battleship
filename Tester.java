@@ -28,7 +28,7 @@ public class Tester{
     b1.placeShip(fastSlow);
     GamePlay game1 = new GamePlay();
     game1.makeGuess();
-    game1.guessHit(Board.numRows, Board.numCols, Board.gameBoard, GamePlay.guessLocationR, GamePlay.guessLocationC, GamePlay.guessBoard)//don't know how to get variables into the call
+    game1.guessHit(b1.numRows, b1.numCols, b1.gameBoard, game1.guessLocationR, game1.guessLocationC, game1.guessBoard);//don't know how to get variables into the call
     
 
     
