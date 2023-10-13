@@ -12,7 +12,7 @@ public class Board{
             for (int b = 0; b < numRows; b++){//5 is untaken space on game board, 1 is taken space on gameboard and guessed space on guessboard, 4 is unguessed space on guessboard, 3 is hit spot on guessboard
                 for (int a = 0; a < numCols; a++){
                   gameBoard[b][a] = 5;
-             }
+                }
             }
             for(int h = 0; h < numRows; h++){
                 for(int u = 0; u < numRows; u++){
@@ -23,12 +23,12 @@ public class Board{
        
         //print all elements of 2d array
         
-        public void printBoard(){
+        public void printBoard(int[][] gameBoard){
             for(int j = 0; j < numCols; j++){
                 for (int i = 0; i < numRows; i++){
                     System.out.print(gameBoard[j][i]);
                 }
-            System.out.print("\n");
+                System.out.print("\n");
             }
         }
     public Board(boolean fastSlow){
