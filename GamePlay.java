@@ -16,10 +16,12 @@ public class GamePlay{
 
     }
     
-    public void guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, int[][] guessBoard){
+    public void guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, int[][] guessBoard, boolean fastSlow){
         boolean checkBoard = false;
+        Board b2 = new Board(fastSlow);
         if(guessBoard[guessLocationR][guessLocationC] == gameBoard[guessLocationR][guessLocationC]){
             guessBoard[guessLocationR][guessLocationC] = 3;
+            b2.printBoardNormal(guessBoard);
         }
         for(int i = 0; i < numRows; i++){//checking if users guessed all ship locations
             for(int j = 0; j < numCols; j++){
