@@ -24,7 +24,7 @@ public class GamePlay{
             for(int k = 0; k < numRows; k ++){
                 for(int u = 0; u < numCols; u++){
                     if( gameBoard[k][u] == 5){
-                        if(guessBoard[u][k] ==5 || guessBoard[u][k] == 1){
+                        if(guessBoard[k][u] ==5 || guessBoard[k][u] == 1){
                             checkBoard = true;
                         }
                         else{

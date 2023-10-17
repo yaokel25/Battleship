@@ -86,12 +86,12 @@ public class Board{
         
         while (overlap == true);
     
-        for(int j = 0; j < ships[i]; j++){//places ships
+        for(int p = 0; p < ships[i]; p++){//places ships
             if(orientation[i] == 'V'){
-            gameBoard[startingLocationR][startingLocationC + j] = 1;
+            gameBoard[startingLocationR][startingLocationC + p] = 1;
         }
         else{
-            gameBoard[startingLocationR + j][startingLocationC] = 1;
+            gameBoard[startingLocationR + p][startingLocationC] = 1;
         }//else
     }//for loop
         
