@@ -24,12 +24,12 @@ public class Tester{
     
     
     Board b1 = new Board(fastSlow);
-   
+    b1.makeBoard();
     b1.placeShip(fastSlow);
     GamePlay game1 = new GamePlay();
     game1.makeGuess();
-    game1.guessHit(b1.numRows, b1.numCols, b1.gameBoard, game1.guessLocationR, game1.guessLocationC, game1.guessBoard, fastSlow);//don't know how to get variables into the call
-    b1.printBoardNormal(game1.guessBoard);
+    game1.guessHit(b1.numRows, b1.numCols, b1.gameBoard, game1.guessLocationR, game1.guessLocationC, game1.guessBoard, fastSlow);
+    
 
     
     }

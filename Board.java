@@ -23,16 +23,16 @@ public class Board{
        
         //print all elements of 2d array
         
-        public void printBoardNormal(int[][] gameBoard){
-            for(int j = 0; j < numCols; j++){
-                for (int i = 0; i < numRows; i++){
-                    System.out.print(gameBoard[j][i]);
+        public void printBoardNormal(int[][] printBoard){
+            for(int j = 0; j < numRows; j++){
+                for (int i = 0; i < numCols; i++){
+                    System.out.print(printBoard[j][i]);
                 }
                 System.out.print("\n");
             }
         }
     public Board(boolean fastSlow){
-        fastSlow = fastSlow;
+        this.fastSlow = fastSlow;
     }
     
     
