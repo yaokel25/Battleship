@@ -23,7 +23,7 @@ public class Board{
        
         //print all elements of 2d array
         
-        public void printBoard(int[][] gameBoard){
+        public void printBoardNormal(int[][] gameBoard){
             for(int j = 0; j < numCols; j++){
                 for (int i = 0; i < numRows; i++){
                     System.out.print(gameBoard[j][i]);
@@ -88,10 +88,10 @@ public class Board{
     
         for(int j = 0; j < ships[i]; j++){//places ships
             if(orientation[i] == 'V'){
-            gameBoard[startingLocationR + j][startingLocationC] = 1;
+            gameBoard[startingLocationR][startingLocationC + j] = 1;
         }
         else{
-            gameBoard[startingLocationR][startingLocationC +j] = 1;
+            gameBoard[startingLocationR + j][startingLocationC] = 1;
         }//else
     }//for loop
         
