@@ -60,19 +60,16 @@ public class GamePlay{
                 }
             }
                     
-                    if(checkBoard == true){
+                    
+            }
+        }
+            while(checkBoard == false);
+            if(checkBoard == true){
                         System.out.print("You guessed all the ships!");
                     }
                     else{
-                        break;
+                        
                     }
-                }
-            }
-        
-    
-            
-        
-        while(checkBoard == false);
         
         
     }
