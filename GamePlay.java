@@ -10,7 +10,7 @@ public class GamePlay{
     public int guessLocationR;
     public int guessLocationC;
     public int[][] guessBoard = new int[10][10];//10 is size of array
-    public void makeGuess(){
+    public void makeGuess(){//places user guess on new guessBoard
         do{
         System.out.print("Enter your guess (ex. A2): ");
         String guessLocationString = scan.nextLine();
@@ -22,7 +22,7 @@ public class GamePlay{
 
     }
     
-    public boolean guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, int[][] guessBoard, boolean fastSlow){
+    public boolean guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, int[][] guessBoard, boolean fastSlow){//check if any ships were hit
         Board b2 = new Board(fastSlow);
         
             if(gameBoard[guessLocationR][guessLocationC] == 1){

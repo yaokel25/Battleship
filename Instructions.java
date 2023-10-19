@@ -30,7 +30,7 @@ public class Instructions{
     }
     }//method printInstructionsSpecific
 
-    public void printGuessInstructions(){
+    public void printGuessInstructions(){//print guess instructions 
         System.out.println("Now that User1 has placed their ships, you can begin placing guesses.");
         System.out.println("The game board for normal game is 10 by 10 spaces.");
         System.out.println("The rows go from A-J and the columns go from 0-9 (the board goes from A0-J9)");
