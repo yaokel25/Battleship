@@ -40,28 +40,26 @@ public class GamePlay{
             for ( int i = 0; i < 5; i++){//check if user guessed all the ships, there are 5 ships
             for(int k = 0; k < numRows; k ++){
                 for(int u = 0; u < numCols; u++){
-                    if( gameBoard[k][u] == 5){
-                        if(guessBoard[k][u] ==5 || guessBoard[k][u] == 1){
+                    if( (gameBoard[k][u] == 5) && (guessBoard[k][u] == 5 || guessBoard[k][u] == 1)){
+                        
                             checkBoard = true;
-                        }
-                        else{
+                    }    
+                    /*else{
                             checkBoard = false;
                             break;
-                        }
-                    }
-                    else if(gameBoard[k][u] == 1){
-                        if(guessBoard[k][u] == 3){
+                    }*/
+                    
+                    else if(gameBoard[k][u] == 1 && guessBoard[k][u] == 3){
+                        
                             checkBoard = true;
-                        }
-                        else{
-                            checkBoard = false;
-                            break;
-                        }
                     }
                     else{
-                        checkBoard = false;
-                        break;
+                            checkBoard = false;
+                            break;
                     }
+                }
+            }
+                    
                     if(checkBoard == true){
                         System.out.print("You guessed all the ships!");
                     }
@@ -70,10 +68,10 @@ public class GamePlay{
                     }
                 }
             }
-        }
+        
     
             
-        }
+        
         while(checkBoard == false);
         
         
