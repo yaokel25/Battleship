@@ -6,20 +6,69 @@ public class GamePlay{
     public int[][] guessBoard = new int[10][10];//10 is size of array
     public void makeGuess(){
         do{
-        System.out.println("Enter your guess (ex. A2): ");
+        System.out.print("Enter your guess (ex. A2): ");
         String guessLocationString = scan.nextLine();
-        guessLocationR = scan.nextLine().charAt(0) - 65;
-        guessLocationC = scan.nextLine().charAt(1) - 48;
+        guessLocationR =guessLocationString.charAt(0) - 65;//Ascii conversion (65=A)
+        guessLocationC = guessLocationString.charAt(1) - 48;//Ascii conversion (48=0)
         guessBoard[guessLocationR][guessLocationC] = 1;
         }
-        while((guessLocationR < 65 && guessLocationR > 74) && (guessLocationC < 48 && guessLocationC > 57) );
+        while((guessLocationR < 0 && guessLocationR > 9) && (guessLocationC < 0 && guessLocationC > 9) );//making sure inputs are from A-J and 0-9 with their ascii values  
 
     }
     
-    public void guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, int[][] guessBoard){
-        if(guessBoard[guessLocationR][guessLocationC] == gameBoard[guessLocationR][guessLocationC])
-            guessBoard[guessLocationR][guessLocationC] = 3;
+    public void guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, int[][] guessBoard, boolean fastSlow){
+        boolean checkBoard = false;
+        Board b2 = new Board(fastSlow);
+        do {
+            for ( int i = 0; i < 5; i++){//check if user guessed all the ships, there are 5 ships
+            for(int k = 0; k < numRows; k ++){
+                for(int u = 0; u < numCols; u++){
+                    if( gameBoard[k][u] == 5){
+                        if(guessBoard[k][u] ==5 || guessBoard[k][u] == 1){
+                            checkBoard = true;
+                        }
+                        else{
+                            checkBoard = false;
+                            break;
+                        }
+                    }
+                    else if(gameBoard[k][u] == 1){
+                        if(guessBoard[k][u] == 3){
+                            checkBoard = true;
+                        }
+                        else{
+                            checkBoard = false;
+                            break;
+                        }
+                    }
+                    else{
+                        checkBoard = false;
+                        break;
+                    }
+                    if(checkBoard == true){
+                        System.out.print("You guessed all the ships!");
+                    }
+                    else{
+                        break;
+                    }
+                }
+            }
         }
+    
+            if(gameBoard[guessLocationR][guessLocationC] == 1){
+            guessBoard[guessLocationR][guessLocationC] = 3;
+            System.out.println("You have hit a ship");
+            b2.printBoardNormal(guessBoard);
+            }
+            else if(gameBoard[guessLocationR][guessLocationC] != 1){
+                System.out.println("You have not hit any ships");
+            }
+            else{
+
+            }
+        }
+        while(checkBoard == false);
+        
         
     }
 
