@@ -9,6 +9,8 @@ public class Tester{
     public static final Scanner scan = new Scanner(System.in);
     public static void main(String[] args){
     char fastSlow1;
+    int checkBoard = 0;
+    boolean checkBoard2;
     
     boolean fastSlow = false;//will be used to check if user plays fast or slow game
     Instructions instruc1 = new Instructions (fastSlow);//new instructions object
@@ -35,7 +37,19 @@ public class Tester{
     instruc1.printGuessInstructions();//prints instructions for the guesser 
     GamePlay game1 = new GamePlay();
     game1.makeGuess();
-    game1.guessHit(b1.numRows, b1.numCols, b1.gameBoard, game1.guessLocationR, game1.guessLocationC, game1.guessBoard, fastSlow);
+
+    do{
+        checkBoard2 = game1.guessHit(b1.numRows, b1.numCols, b1.gameBoard, game1.guessLocationR, game1.guessLocationC, game1.guessBoard, fastSlow);
+    
+        if(checkBoard2 == true){
+        checkBoard = checkBoard +1;
+    }
+    }
+    while(checkBoard != 17);
+    
+    if(checkBoard == 17){//17 is max number of hits
+        System.out.println("You have hit all the ships");
+    }
     
 
     

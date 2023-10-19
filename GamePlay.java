@@ -22,55 +22,26 @@ public class GamePlay{
 
     }
     
-    public void guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, int[][] guessBoard, boolean fastSlow){
-        boolean checkBoard = false;
+    public boolean guessHit(int numRows, int numCols, int[][] gameBoard, int guessLocationR, int guessLocationC, int[][] guessBoard, boolean fastSlow){
         Board b2 = new Board(fastSlow);
-        do {
+        
             if(gameBoard[guessLocationR][guessLocationC] == 1){
             guessBoard[guessLocationR][guessLocationC] = 3;
             System.out.println("You have hit a ship");
             b2.printBoardNormal(guessBoard);
+            return true;
             }
             else if(gameBoard[guessLocationR][guessLocationC] != 1){
                 System.out.println("You have not hit any ships");
+                return false;
             }
             else{
-                break;
+                return false;
             }
-            for ( int i = 0; i < 5; i++){//check if user guessed all the ships, there are 5 ships
-            for(int k = 0; k < numRows; k ++){
-                for(int u = 0; u < numCols; u++){
-                    if( (gameBoard[k][u] == 5) && (guessBoard[k][u] == 5 || guessBoard[k][u] == 1)){
-                        
-                            checkBoard = true;
-                    }    
-                    /*else{
-                            checkBoard = false;
-                            break;
-                    }*/
-                    
-                    else if(gameBoard[k][u] == 1 && guessBoard[k][u] == 3){
-                        
-                            checkBoard = true;
-                    }
-                    else{
-                            checkBoard = false;
-                            break;
-                    }
-                }
-            }
-                    
-                    
-            }
-        }
-            while(checkBoard == false);
-            if(checkBoard == true){
-                        System.out.print("You guessed all the ships!");
-                    }
-                    else{
-                        
-                    }
+            
         
+            
+           
         
     }
 
