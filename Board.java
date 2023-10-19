@@ -1,4 +1,9 @@
-
+/**
+* Board.java
+* @author Keliang Yao
+* @since 10.19.23
+* This class makes, prints, and sets the board for manual placement
+*/
 import java.util.Scanner;
 public class Board{
         Scanner scan = new Scanner(System.in);

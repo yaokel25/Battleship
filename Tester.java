@@ -1,3 +1,9 @@
+/**
+* Tester.java
+* @author Keliang Yao
+* @since 10.19.23
+* This is the main tester class
+*/
 import java.util.Scanner;
 public class Tester{
     public static final Scanner scan = new Scanner(System.in);
@@ -26,6 +32,7 @@ public class Tester{
     Board b1 = new Board(fastSlow);
     b1.makeBoard();
     b1.placeShip(fastSlow);
+    instruc1.printGuessInstructions();//prints instructions for the guesser 
     GamePlay game1 = new GamePlay();
     game1.makeGuess();
     game1.guessHit(b1.numRows, b1.numCols, b1.gameBoard, game1.guessLocationR, game1.guessLocationC, game1.guessBoard, fastSlow);

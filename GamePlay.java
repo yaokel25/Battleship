@@ -1,3 +1,9 @@
+/**
+* GamePlay.java
+* @author Keliang Yao
+* @since 10.19.23
+* This class prompts users for guesses and checks the guesses against the original gameBoard and prints out the guessBoard after every guess
+*/
 import java.util.Scanner;
 public class GamePlay{
     Scanner scan = new Scanner(System.in);
