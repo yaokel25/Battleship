@@ -38,7 +38,7 @@ public class Instructions{
         System.out.println("After your guess, a game board recording your guesses will be printed.");
         System.out.println("A 5 mean the space is unguessed, a 1 means space is guessed but has no ships, and a 3 means a space is guessed and has a ship.");
     }
-    }
+    
     public Instructions(boolean fastSlow){
         gameType1 = fastSlow;
     }
