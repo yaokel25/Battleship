@@ -26,6 +26,17 @@ public class GamePlay{
         boolean checkBoard = false;
         Board b2 = new Board(fastSlow);
         do {
+            if(gameBoard[guessLocationR][guessLocationC] == 1){
+            guessBoard[guessLocationR][guessLocationC] = 3;
+            System.out.println("You have hit a ship");
+            b2.printBoardNormal(guessBoard);
+            }
+            else if(gameBoard[guessLocationR][guessLocationC] != 1){
+                System.out.println("You have not hit any ships");
+            }
+            else{
+                break;
+            }
             for ( int i = 0; i < 5; i++){//check if user guessed all the ships, there are 5 ships
             for(int k = 0; k < numRows; k ++){
                 for(int u = 0; u < numCols; u++){
@@ -61,17 +72,7 @@ public class GamePlay{
             }
         }
     
-            if(gameBoard[guessLocationR][guessLocationC] == 1){
-            guessBoard[guessLocationR][guessLocationC] = 3;
-            System.out.println("You have hit a ship");
-            b2.printBoardNormal(guessBoard);
-            }
-            else if(gameBoard[guessLocationR][guessLocationC] != 1){
-                System.out.println("You have not hit any ships");
-            }
-            else{
-
-            }
+            
         }
         while(checkBoard == false);
         
