@@ -28,7 +28,7 @@ public class GamePlay{
             if(gameBoard[guessLocationR][guessLocationC] == 1){
             guessBoard[guessLocationR][guessLocationC] = 3;
             System.out.println("You have hit a ship");
-            b2.printBoardNormal(guessBoard);
+            b2.printBoardNormal(guessBoard, fastSlow);
             return true;
             }
             else if(gameBoard[guessLocationR][guessLocationC] != 1){

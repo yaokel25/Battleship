@@ -6,14 +6,24 @@
 */
 import java.util.Scanner;
 public class Board{
-        Scanner scan = new Scanner(System.in);
         public int numRows = 10;
         public int numCols = 10;
         public int[] ships = {2,3,3,4,5};
+        Scanner scan = new Scanner(System.in);
+        if (fastSlow == false){
+         numRows = 10;
+         numCols = 10;
+         ships = {2,3,3,4,5};
+        }
+        else if(fastSlow == true){
+            numRows = 8;
+            numCols = 8;
+            ships = {2,3,3};
+        }
         public int[][] gameBoard = new int[numRows][numCols];
         public int[][] guessBoard = new int[numRows][numCols];
         public boolean fastSlow;
-        public void makeBoard(){
+        public void makeBoard(boolean fastSlow){
             for (int b = 0; b < numRows; b++){//5 is untaken space on game board, 1 is taken space on gameboard and guessed space on guessboard, 4 is unguessed space on guessboard, 3 is hit spot on guessboard
                 for (int a = 0; a < numCols; a++){
                   gameBoard[b][a] = 5;
@@ -28,7 +38,7 @@ public class Board{
        
         //print all elements of 2d array
         
-        public void printBoardNormal(int[][] printBoard){
+        public void printBoardNormal(int[][] printBoard, boolean fastSlow){
             for(int j = 0; j < numRows; j++){
                 for (int i = 0; i < numCols; i++){
                     System.out.print(printBoard[j][i]);
@@ -105,7 +115,10 @@ public class Board{
     
 
 
-}//if-line35
+}//if-line46
+
+
+
 
         
     }//method placeShip

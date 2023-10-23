@@ -32,12 +32,12 @@ public class Tester{
     
     
     Board b1 = new Board(fastSlow);
-    b1.makeBoard();
+    b1.makeBoard(fastSlow);
     b1.placeShip(fastSlow);
     instruc1.printGuessInstructions();//prints instructions for the guesser 
     GamePlay game1 = new GamePlay();
     //game1.makeGuess();
-
+    if(fastSlow == false){
     while(checkBoard < 17)
     {
         game1.makeGuess();
@@ -60,6 +60,29 @@ public class Tester{
     
 
     
+    }//if line40
+    else if(fastSlow == true){
+        while(checkBoard < 8)//8 is max number of ships for fast game
+    {
+        game1.makeGuess();
+        checkBoard2 = game1.guessHit(b1.numRows, b1.numCols, b1.gameBoard, game1.guessLocationR, game1.guessLocationC, game1.guessBoard, fastSlow);
+    
+        if(checkBoard2 == true){
+        checkBoard = checkBoard +1;
+        System.out.println(checkBoard);
+        }
+        if(checkBoard == 8)
+        {
+            break;
+        }
     }
+    
+    
+    if(checkBoard == 8){//8 is max number of hits
+        System.out.println("You have hit all the ships");
+    }
+
+    }
+}
 
 }
